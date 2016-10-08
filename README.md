@@ -1,2 +1,2 @@
 # FIRfilter
-A simple low pass FIR build in python with a tk front end. Please feel free to use it it you like. Howver I cannot guarantee it is entirely bug free.
+A simple low pass FIR build in python with a tk front end. The backed uses scipy FIR filter design. The GUI features muliple window functions, window region, cutoff and muliply.
