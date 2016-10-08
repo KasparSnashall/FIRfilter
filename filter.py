@@ -20,6 +20,7 @@ import numpy as np
 import tkMessageBox
 import tkFileDialog
 
+np.set_printoptions(suppress=True) # surpress scientific notation
 
 def main():
 	root = Tk()
@@ -229,7 +230,11 @@ def main():
 			if mymulti.isdigit():
 				mymulti = float(mymulti)
 				#fir_coeff = fir_coeff.tolist()
-				fir_coeff = fir_coeff*mymulti
+				coeff_sum = np.sum(fir_coeff)
+				fir_coeff = fir_coeff/coeff_sum
+				fir_coeff = np.rint(fir_coeff*mymulti)
+				fir_coeff = fir_coeff.astype(int)
+				
 				#for x in fir_coeff:
 				#	print type(x)
 				#fir_coeff = [ x*mymulti for x in fir_coeff ]
